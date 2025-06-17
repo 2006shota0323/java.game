@@ -43,4 +43,11 @@ public class Player extends Character implements KeyListener
 		// TODO 自動生成されたメソッド・スタブ
 		
 	}
+	
+	public void move()
+	{
+		super.move();
+		if(x<0) x=0;
+		if(x>370) x=370;
+	}
 }
