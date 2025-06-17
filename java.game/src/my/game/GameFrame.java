@@ -19,9 +19,18 @@ public class GameFrame extends MyFrame {
 		  while(i<GameWorld.playerBullets.size())
 		  {
 			  PlayerBullet b=GameWorld.playerBullets.get(i);
+			  
 			  b.draw(this);;
 			  b.move();
-			  i++;
+			  
+			  if(b.y<0)
+			  {
+				  GameWorld.playerBullets.remove(i);
+			  }
+			  else
+			  {
+				  i++;
+			  }
 		  }
 		  
 		  sleep(0.03);
