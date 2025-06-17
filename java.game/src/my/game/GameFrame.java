@@ -70,4 +70,38 @@ public class GameFrame extends MyFrame {
 		  }
 	  }
   }
+  
+  public void checkPlayerBulletsAndEnemies()
+  {
+	  int i=0;
+	  while(i<GameWorld.playerBullets.size())
+	  {
+		  PlayerBullet b=GameWorld.playerBullets.get(i);
+		  int j=0;
+		  while(j<GameWorld.enemies.size())
+		  {
+			  Enemy e=GameWorld.enemies.get(i);
+			  
+			  if(Math.abs(e.x-b.x)<=30 && Math.abs(e.y-b.y)<=30)
+			  {
+				  System.out.println("あたり");
+			  }
+			  j++;
+		  }
+		  j++;
+	  }
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+  }
 }
