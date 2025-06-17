@@ -8,6 +8,7 @@ public class GameFrame extends MyFrame {
 	  GameWorld.player=new Player(100,300,0,0);
 	  addKeyListener(GameWorld.player);
 	  GameWorld.playerBullets=new Vector<PlayerBullet>();
+	  GameWorld.enemies=new Vector<Enemy>();
 	  while(true)
 	  {
 		  clear();
