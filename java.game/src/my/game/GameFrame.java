@@ -9,6 +9,7 @@ public class GameFrame extends MyFrame {
 	  addKeyListener(GameWorld.player);
 	  GameWorld.playerBullets=new Vector<PlayerBullet>();
 	  GameWorld.enemies=new Vector<Enemy>();
+	  GameWorld.enemies.add(new EnemyBase(100,50,1,0));
 	  while(true)
 	  {
 		  clear();
@@ -16,10 +17,22 @@ public class GameFrame extends MyFrame {
 		  GameWorld.player.draw(this);
 		  GameWorld.player.move();
 		  movePlayerBullets();
+		  moveEnemies();
+		  
+		
 		  
 		  sleep(0.03);
 	  }
 	  
+  }
+  public void moveEnemies()
+  {
+	  for(int i=0; i<GameWorld.enemies.size(); i++)
+	  {
+		  Enemy e=GameWorld.enemies.get(i);
+		  e.draw(this);;
+		  e.move();
+	  }
   }
   
   
