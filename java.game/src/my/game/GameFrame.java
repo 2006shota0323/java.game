@@ -16,8 +16,18 @@ public class GameFrame extends MyFrame {
 		  
 		  GameWorld.player.draw(this);
 		  GameWorld.player.move();
+		  
 		  movePlayerBullets();
 		  moveEnemies();
+		  
+		  for(int i=0; i<GameWorld.enemies.size(); i++)
+		  {
+			  Enemy e=GameWorld.enemies.get(i);
+			  if(e.x==GameWorld.player.x && e.y==GameWorld.player.y)
+			  {
+				  System.out.println("やられた");
+			  }
+		  }
 		  
 		
 		  
