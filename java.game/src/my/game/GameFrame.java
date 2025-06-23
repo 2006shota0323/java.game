@@ -87,6 +87,10 @@ public class GameFrame extends MyFrame {
 			  {
 				  System.out.println("あたり");
 				  hits++;
+				  e.life--;
+			  }	 
+			  if(e.life<=0)
+			  {
 				  GameWorld.enemies.remove(j);
 			  }
 			  else
@@ -94,6 +98,7 @@ public class GameFrame extends MyFrame {
 				  j++;
 			  }
 		  }
+		  
 		  if(hits>0)
 		  {
 			  GameWorld.playerBullets.remove(i);
