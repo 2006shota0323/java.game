@@ -6,12 +6,13 @@ public class SpeedEnemy extends Enemy
 	{
 		super(x,y,vx,vy);
 		life=5;
+		score=5;
 	}
 	
 	public void move()
 	{
 		super.move();
-		vy=vy+0.9;
+		vy=vy+0.3;
 	}
 	
 	public void draw(MyFrame f)

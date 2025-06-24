@@ -6,6 +6,7 @@ public class CurveEnemy extends Enemy
 	{
 		super(x,y,vx,vy);
 		life=3;
+		score=3;
 	}
 	
 	public void move()
@@ -15,10 +16,12 @@ public class CurveEnemy extends Enemy
 		{
 			x++;
 		}
-		if(x>GameWorld.player.vx) 
+		if(x>GameWorld.player.x) 
 		{
 			x--;
 		}
+		
+		vy=vy+0.2;
 	}
 	
 	public void draw(MyFrame f)

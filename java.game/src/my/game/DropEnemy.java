@@ -16,9 +16,9 @@ public class DropEnemy extends Enemy
 	
 	public void draw(MyFrame f)
 	{
-		f.setColor(0,128,0);
+		f.setColor(0,0,255);
 		f.fillRect(x, y-10,30,10);;
-		f.setColor(0,128,0);
+		f.setColor(0,0,255);
 		f.fillRect(x+10,y,10,20);
 	}
 }

@@ -1,5 +1,6 @@
 package my.game;
 
+
 import java.util.Vector;
 
 public class GameFrame extends MyFrame {
@@ -9,6 +10,8 @@ public class GameFrame extends MyFrame {
 	  addKeyListener(GameWorld.player);
 	  GameWorld.stage=1;
 	  GameWorld.score=0;
+	  
+	 
 	  
 	  while(true)
 	  {
@@ -21,8 +24,9 @@ public class GameFrame extends MyFrame {
 		   while(true)
 		   {
 			  clear();
-			  drawString("Stage ="+GameWorld.stage,300,50,15);
-			  drawString("Score ="+ GameWorld.score,300,80,15);
+			  
+			  drawString("Stage =" +GameWorld.stage,300,50,15);
+			  drawString("Score =" +GameWorld.score,300,80,15);
 			  
 			  GameWorld.player.draw(this);
 			  GameWorld.player.move();
@@ -138,16 +142,31 @@ public class GameFrame extends MyFrame {
 				  System.out.println("あたり");
 				  hits++;
 				  e.life--;
+				  
+				  if(e.life<=0)
+				  {
+					  if (e instanceof SplitEnemy) {
+		                    ((SplitEnemy) e).split(GameWorld.enemies);
+		                }
+					 
+					    
+					  GameWorld.score+=e.score;
+					  
+					  GameWorld.enemies.remove(j);
+					  
+					 
+				  }
+				  else
+				  {
+					  j++;
+				  }
+				  break;
 			  }	 
-			  if(e.life<=0)
-			  {
-				  GameWorld.score+=e.score;
-				  GameWorld.enemies.remove(j);
-			  }
 			  else
 			  {
 				  j++;
 			  }
+			 
 		  }
 		  
 		  if(hits>0)
